@@ -1,0 +1,28 @@
+<div>
+<h4 style='font-style: italic'>Major policies</h4></div>
+  
+<ul>
+    <li *ngFor='let insurance of insurancepackage'>
+  <table class="bodybg">
+      <tr>{{insurance.policyText}}</tr>
+      <tr>
+      <ul>{{insurance.policyDescription}}</ul></tr>
+
+    </table>
+    </li>
+  </ul>
+  <div>
+    <p><b>What our customers say</b></p>
+    <p style="font-style: italic;font-weight: 100">{{feedback1}}</p>
+    <p>{{feedback2}}</p>
+    <app-testimony></app-testimony>
+  </div>
+  <section #section1></section>
+  <section #section2></section>
+  <section #section3></section>
+
+  <!----<app-footer></app-footer>
+  <app-footer></app-footer> 
+  -->
+
+

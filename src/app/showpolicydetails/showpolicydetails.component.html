@@ -1,0 +1,21 @@
+<table class='table table-bordered tables-striped'>
+<tr>
+<td><label>Enter all the names</label>
+<input [(ngModel)]='srchName'/>
+</td>
+
+</tr>
+  <tr>
+    <th>ID</th>
+    <th>Policy Hoder Name</th>
+    <th>Policy Amount</th>
+    <th>Maturity Date</th>
+  </tr>
+  <tr *ngFor="let eachpolicy of policyList | filter:'policyHolderName':srchName">
+    <td>{{eachpolicy.id}}</td>     
+    <td>{{eachpolicy.policyHolderName|uppercase}}</td>     
+    <td>{{eachpolicy.policyAmout|currency:'INR':'symbol'}}</td>     
+    <td>{{eachpolicy.maturity|date:'short'}}</td>     
+
+  </tr>
+</table>
