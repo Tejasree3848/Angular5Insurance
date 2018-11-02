@@ -21,15 +21,14 @@ showLogout=false;
 
   ngOnInit() {
     this.service.message.subscribe(status=>{
-    if(status=='Logged'){
+    if(status==='logged'){
+      this.showLogout= true;
+      this.showLogin= false;
+    } 
+    if(status==='logout'){
       this.showLogout= false;
 
       this.showLogin= true;
-    } 
-    if(status=='Loggedout'){
-      this.showLogout= true;
-
-      this.showLogin= false;
     }  
   });
 

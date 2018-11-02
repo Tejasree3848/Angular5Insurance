@@ -1,18 +1,69 @@
 {
-    "lifeInsurance":[
-        {"id":101,"policyHolderName":"Ramesh","policyAmout":45000,"maturity":"2020-10-12"},
-        {"id":102,"policyHolderName":"Suresh","policyAmout":55000,"maturity":"2023-9-24"},
-        {"id":103,"policyHolderName":"Magesh","policyAmout":60000,"maturity":"2024-8-09"},
-        {"id":104,"policyHolderName":"Ganesh","policyAmout":80000,"maturity":"2025-7-01"},
-        {"id":105,"policyHolderName":"Nitin","policyAmout":35000 ,"maturity":"2025-6-31"}
-    
-    ],
-    "advisors":[
-        {"id":201,"name":"kusuma","mobilenumber":999676},
-        {"id":202,"name":"roja","mobilenumber":565656},
-        {"id":203,"name":"Jass","mobilenumber":6057767000},
-        {"id":204,"name":"Rose","mobilenumber":343543},
-        {"id":205,"name":"vish","mobilenumber":35053534500}
-    
-    ]
+  "lifeInsurance": [
+    {
+      "id": 103,
+      "policyHolderName": "Manogna",
+      "policyAmount": 60000,
+      "maturity": "2024-8-09"
+    },
+    {
+      "id": 104,
+      "policyHolderName": "Ganesh",
+      "policyAmount": 80000,
+      "maturity": "2025-7-01"
+    },
+    {
+      "id": 105,
+      "policyHolderName": "Nitin",
+      "policyAmount": 35000,
+      "maturity": "2025-6-31"
+    },
+    {
+      "id": 1,
+      "policyHolderName": "teju",
+      "policyAmount": "2300"  ,
+      "maturity": "2018-11-09"
+
+    },
+    {
+      "id": 3,
+      "policyHolderName": "Tejasree",
+      "policyAmount": "1000",
+      "maturity": "2018-11-23"
+
+    },
+    {
+      "id": 101,
+      "policyHolderName": "ABC",
+      "policyAmount": "2000",
+      "maturity": "2018-11-24"
+    }
+  ],
+  "advisors": [
+    {
+      "id": 201,
+      "name": "kusuma",
+      "mobilenumber": 999676
+    },
+    {
+      "id": 202,
+      "name": "roja",
+      "mobilenumber": 565656
+    },
+    {
+      "id": 203,
+      "name": "Jass",
+      "mobilenumber": 6057767000
+    },
+    {
+      "id": 204,
+      "name": "Rose",
+      "mobilenumber": 343543
+    },
+    {
+      "id": 205,
+      "name": "vish",
+      "mobilenumber": 35053534500
+    }
+  ]
 }

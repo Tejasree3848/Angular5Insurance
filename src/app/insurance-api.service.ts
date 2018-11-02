@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { InsuranceAdvisor } from './insurance-advisor';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PolicyDetailsPipe } from './policy-details-pipe';
+import { Policydetails } from './policydetails';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InsuranceAPIService {
 
+  header=new HttpHeaders().set('content-type','application/json');
   baseURL='http://localhost:3000/';
+
+  lifeInsuranceURL=this.baseURL+'lifeInsurance';
+
+
   constructor(private http:HttpClient) { }
 
   findAllAdvisors():Observable<InsuranceAdvisor[]>{
@@ -31,4 +37,25 @@ findpolicy():Observable<PolicyDetailsPipe[]>{
     return this.http.get<PolicyDetailsPipe[]>(policyURL);
 
   }
+//Add operation
+  addPolicy(policy:PolicyDetailsPipe):Observable<PolicyDetailsPipe>{
+
+  
+    return this.http.post<PolicyDetailsPipe>(this.lifeInsuranceURL,policy,{headers:this.header})
+  }
+
+  //remove/delete operation
+  removePolicy(policy:PolicyDetailsPipe):Observable<PolicyDetailsPipe>{
+
+    const deleteURL=`${this.lifeInsuranceURL}/${policy.id}`;
+
+    return this.http.delete<PolicyDetailsPipe>(deleteURL,{headers:this.header})
+  }
+//update
+updatePolicy(policy:PolicyDetailsPipe):Observable<PolicyDetailsPipe>{
+
+  const updateURL=`${this.lifeInsuranceURL}/${policy.id}`;
+
+  return this.http.put<PolicyDetailsPipe>(updateURL,policy,{headers:this.header})
+}
 }

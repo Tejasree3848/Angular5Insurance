@@ -1,7 +1,7 @@
 export interface PolicyDetailsPipe {
     id:number;
     policyHolderName:string;
-    policyAmout:number;
+    policyAmount:number;
     maturity:Date;
 }
 

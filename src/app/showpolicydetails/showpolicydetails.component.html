@@ -1,21 +1,51 @@
+<div class='col-md-4'  *ngIf='toggleForm'> 
+
+<form #f='ngForm' (ngSubmit)="submit(f.value)" >
+  <table>
+  <div  class='form-group'>
+  <label for="id">ID:</label>
+  <input type="text" name='id' [(ngModel)]='policyData.id'>
+  </div>
+  <div  class='form-group' >
+    <label for="policyHolderName">policyHolderName:</label>
+    <input type="text" name='policyHolderName' [(ngModel)]='policyData.policyHolderName'>
+  </div>
+  <div  class='form-group'>
+    <label for="policyAmount">policyAmount:</label>
+    <input type="text"name='policyAmount' [(ngModel)]='policyData.policyAmount'>
+  </div>
+  <div  class='form-group'>
+      <label for="maturity">MaturityDate:</label>
+      <input type="date" name='maturity' [(ngModel)]='policyData.maturity'>
+    </div>
+    <div  class='form-group'> 
+     <input type="submit" [value]='buttonText'>
+    </div>
+  </table>
+</form>
+</div>
 <table class='table table-bordered tables-striped'>
 <tr>
 <td><label>Enter all the names</label>
 <input [(ngModel)]='srchName'/>
 </td>
-
-</tr>
+<td><label> Enter the policyHolderName</label></td>
+<td><input [(ngModel)]='srchName'></td>
+<td><button (click)='showForm()' [ngClass]="{'fa':true,'fa-toggle-up':showUp,'fa-toggle-down':showDown}"></button></td>
   <tr>
     <th>ID</th>
     <th>Policy Hoder Name</th>
     <th>Policy Amount</th>
     <th>Maturity Date</th>
   </tr>
-  <tr *ngFor="let eachpolicy of policyList | filter:'policyHolderName':srchName">
+  <tr *ngFor="let eachpolicy of policyList | filter:'policyHolderName':srchName|paginate:{itemsPerPage:2,currentPage:page} ">
     <td>{{eachpolicy.id}}</td>     
     <td>{{eachpolicy.policyHolderName|uppercase}}</td>     
-    <td>{{eachpolicy.policyAmout|currency:'INR':'symbol'}}</td>     
-    <td>{{eachpolicy.maturity|date:'short'}}</td>     
-
+    <td>{{eachpolicy.policyAmount|currency:'INR':'symbol'}}</td>     
+    <td>{{eachpolicy.maturity|date:'short'}}</td> 
+    <td><button class='fa fa-2x fa-edit'  (click)="update(eachpolicy)"></button></td>   
+    <td><button class='fa fa-2x fa-remove' (click)="remove(eachpolicy)"></button></td>    
+ 
   </tr>
 </table>
+<pagination-controls (pageChange)='page=$event'></pagination-controls>

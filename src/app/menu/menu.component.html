@@ -1,15 +1,14 @@
 
-<div>
-  {{link}}
-</div>
-<nav>
-  <ul>
-    <li *ngFor='let eachlink of linksFromParent'>
-      <a [href]='eachlink.linkRef' [class]='eachlink.linkStyle'>
+
+<nav class='navabar navbar-expand bg-danger'>
+  <ul class=navbar-nav>
+    <li *ngFor='let eachlink of linksFromParent' class='nav-item'>
+      <a [routerLink]="[eachlink.linkRef]" [class]='eachlink.linkStyle'>
         {{eachlink.linkText}}</a>
     </li>
-      <li *ngIf='showLogin' class='nav-item'><a href='' class='nav-link' appHighLight>Login</a></li>
-      <li *ngIf='showLogout'class='nav-item'><a href='' class='nav-link' appHighLight>Logout</a></li>
+<li *ngIf='showLogin' class='nav-item'><a [routerLink]="['login']" class='nav-link' appHighLight>Login</a></li>
+<li *ngIf='showLogout'class='nav-item'><a [routerLink]="['logout']" class='nav-link' appHighLight>Logout</a></li> 
+      
 
   </ul>
 </nav>
