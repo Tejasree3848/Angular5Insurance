@@ -15,6 +15,7 @@ export class InsuranceAPIService {
 
   lifeInsuranceURL=this.baseURL+'lifeInsurance';
 
+  healthInsuranceURL=this.baseURL+'history';
 
   constructor(private http:HttpClient) { }
 
@@ -32,6 +33,13 @@ export class InsuranceAPIService {
 
      
 //  }
+//Health policy
+findAllHealthpolicy():Observable<PolicyDetailsPipe[]>{
+  const policyURL=this.baseURL+'healthInsuranceURL';
+    return this.http.get<PolicyDetailsPipe[]>(policyURL);
+
+  }
+  //
 findpolicy():Observable<PolicyDetailsPipe[]>{
   const policyURL=this.baseURL+'lifeInsurance';
     return this.http.get<PolicyDetailsPipe[]>(policyURL);

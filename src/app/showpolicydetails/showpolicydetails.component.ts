@@ -34,6 +34,9 @@ buttonText='Add';
 @ViewChild('f') form:any;
   ngOnInit() {
     this.service.findpolicy().subscribe(data=>this.policyList=data);
+    //health policy
+    this.service.findAllHealthpolicy().subscribe(data=>this.policyList=data);
+
   }
 
   submit()

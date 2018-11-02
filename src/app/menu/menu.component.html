@@ -1,7 +1,7 @@
 
 
 <nav class='navabar navbar-expand bg-danger'>
-  <ul class=navbar-nav>
+  <ul class='navbar-nav'>
     <li *ngFor='let eachlink of linksFromParent' class='nav-item'>
       <a [routerLink]="[eachlink.linkRef]" [class]='eachlink.linkStyle'>
         {{eachlink.linkText}}</a>

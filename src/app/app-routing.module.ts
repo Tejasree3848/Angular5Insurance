@@ -9,13 +9,19 @@ import { LogoutComponent } from './logout/logout.component';
 import { ShowAdvisorsComponent } from './show-advisors/show-advisors.component';
 import { SearchbranchComponent } from './searchbranch/searchbranch.component';
 import { UniversalguardGuard } from './universalguard.guard';
+import { ShowHealthPolicyComponent } from './show-health-policy/show-health-policy.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'login/:msg',component:LoginComponent},
   {path:'products',component:ContentComponent},
-  {path:'history',component:ShowpolicydetailsComponent,canActivate:[UniversalguardGuard]},
+  {path:'history',component:DetailsComponent,
+  canActivate:[UniversalguardGuard],children:[
+  {path:'health',component:ShowHealthPolicyComponent,outlet:'health'},
+  {path:'life',component: ShowpolicydetailsComponent,outlet:'life'},
+  ]},
   {path:'advisors',component:ShowAdvisorsComponent},
   {path:'quote',component:NewshowQuoteComponent},
   {path:'branches',component:SearchbranchComponent},

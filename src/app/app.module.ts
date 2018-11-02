@@ -21,6 +21,10 @@ import { AddelementDirective } from './addelement.directive';
 import { ShowLocationComponent } from './show-location/show-location.component';
 import { ShowpolicydetailsComponent } from './showpolicydetails/showpolicydetails.component';
 import { FilterPipe } from './filter.pipe';
+import { ShowHealthPolicyComponent } from './show-health-policy/show-health-policy.component';
+import { DetailsComponent } from './details/details.component';
+import { ChildcomponentComponent } from './childcomponent/childcomponent.component';
+import { LifecyclecomponentComponent } from './lifecyclecomponent/lifecyclecomponent.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { FilterPipe } from './filter.pipe';
     AddelementDirective,
     ShowLocationComponent,
     ShowpolicydetailsComponent,
-    FilterPipe
+    FilterPipe,
+    ShowHealthPolicyComponent,
+    DetailsComponent,
+    ChildcomponentComponent,
+    LifecyclecomponentComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +56,8 @@ import { FilterPipe } from './filter.pipe';
   ],
   providers: [HttpClient],
   entryComponents:[ShowLocationComponent],
-  bootstrap: [AppComponent,FooterComponent]
+  bootstrap: [AppComponent,FooterComponent] 
+  //bootstrap: [LifecyclecomponentComponent]
+
 })
 export class AppModule { }
